@@ -1,29 +1,24 @@
-const path = require('path);
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
     mode: 'production',
-    devtool: 'sourcd-map',
     entry: {
         main: './src/js/main.js',
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'js/[name]-[contenthash][ext]',
+        filename: 'js/[name]-[contenthash].js',
     },
     module: {
         rules: [
             {
                 test: /\.vue/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'vue-loader',
-                    },
-                ],
+                loader: 'vue-loader',
             },
             {
                 test: /\.(css|scss|sass)$/,
