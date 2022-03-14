@@ -1,9 +1,41 @@
 doctype html
-
-html(lang="en")
+html(lang="ja")
     head
         meta(charaset="UTF-8")
+        title マクロにするだけ
+        meta(name="description" content="行頭に任意の文字を繰り返し入力する。")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        title hoge
+
+        // フォント
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500&display=swap" rel="stylesheet")
     body
-        h1 hey
+        // ヘッダー
+        header.header
+            div.header-wrapper
+                h1.midashi マクロにするだけのページ
+                img.kon-image(src="../images/kon.png" alt="Kon")
+        //メインコンテンツ
+        main#app.main
+            .main-wrapper
+                //コンバータ本隊
+                section.converter
+                    .converter-wrapper
+                        h2.converter-head コンバータ
+                        textarea.raw(v-model="raw" name="raw" rows="15" cols="30")
+                        span.raw-label-wrapper
+                            label(for="raw") ↑↑マクロにしたい文章をここに入力！
+                .middle
+                    input.command(v-model="command" name="command" type="text")
+                    span.command-label-wrapper
+                    label.command-label ↑↑ /（スラッシュ)付きのコマンドを入力！
+                    br
+                    |例:/party, /alliance
+                    img.right-image(src="../images/矢印.png" alt="矢印")
+                    //span.change-button-wrapper
+                        //input.change-button(type="button" value="変換！！！")
+                //結果表示セクション
+                section.result
+                    h2.result-head 結果！
+                    textarea.macro(v-model="result" name="macro" rows="15" cols="30" readonly)

@@ -1,0 +1,108 @@
+$min-width:960px;
+
+
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+button, input, select, textarea {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+body{
+    font-size:12px;
+    line-height:1.5;
+    min-width:$min-width;
+}
+
+.header {
+    height: 50px;
+    padding: 36px 20px 20px 20px;
+    position: relative;
+    min-width:$min-width;
+    border-bottom: 3px solid;
+}
+
+.header-wrapper {
+    width:$min-width;
+    margin: 0 auto;
+    position: relative;
+}
+
+.midashi {
+    font-size:25px;
+}
+
+.kon-image {
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border: 2px solid #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.main {
+    padding:20px;
+    position: relative;
+    min-width:$min-width;
+}
+
+.main-wrapper {
+    width:$min-width;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.converter {
+    width:260px;
+    position: relative;
+}
+
+.converter-head {
+    font-size:20px;
+}
+
+.raw-label-wrapper {
+    display:block;
+}
+
+.middle {
+    position: absolute;
+    top: 100px;
+    left: 270px;
+}
+
+.command-label-wrapper {
+    display: block;
+}
+
+.right-image {
+    display: block;
+    width:100px;
+    height:100px;
+    position: absolute;
+}
+
+.change-button-wrapper {
+    display:block;
+    position: absolute;
+    top:170px;
+    left:3px;
+}
+
+.change-button {
+    font-size: 20px;
+    background-color: #fff;
+    border: 2px solid #000;
+}
+
+.result {
+    position: absolute;
+    top: 0;
+    right: 200px;
+}
+
+.result-head {
+    font-size:20px;
+}

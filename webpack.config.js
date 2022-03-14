@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -7,11 +8,11 @@ const { VueLoaderPlugin } = require('vue-loader');
 module.exports = {
     mode: 'production',
     entry: {
-        main: './src/js/main.js',
+        main: './src/scripts/main.js',
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'js/[name]-[contenthash].js',
+        filename: 'js/[contenthash].js',
     },
     module: {
         rules: [
@@ -39,7 +40,7 @@ module.exports = {
                 test: /\.png|\.jpg/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'images/[name][contenhash][ext]',
+                    filename: 'images/[contenthash][ext]',
                 },
                 use: [
                     {
@@ -71,7 +72,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: './styles/[name]-[contenthash][ext]',
+            filename: './styles/[contenthash].css',
         }),
         new HtmlWebpackPlugin({
             template: './src/templates/index.pug',
@@ -79,5 +80,9 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new VueLoaderPlugin(),
+        new webpack.DefinePlugin({
+            __VUE_OPTIONS_API__: 'false',
+            __VUE_PROD_DEVTOOLS__: 'false'
+        }),
     ],
 };
