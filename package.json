@@ -1,0 +1,8 @@
+{
+  "name": "MyApps",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tsuchiya-katsu/MyApps.git",
+  "author": "tsuchiya-katsu <kk6182720@gmail.com>",
+  "license": "MIT"
+}
